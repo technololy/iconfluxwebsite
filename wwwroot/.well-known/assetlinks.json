@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.iconflux.knowmynetwork",
+        "sha256_cert_fingerprints": ["7C:DC:67:06:16:8E:D8:09:E2:84:AD:C0:7B:8B:9F:A5:53:26:87:3D:8E:D1:CA:8B:56:3B:37:02:FD:3D:1C:2F"]
+      }
+    }
+  ]
+  

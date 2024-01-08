@@ -1,0 +1,70 @@
+﻿@page "/how-it-works"
+@using System.Text.Json;
+@inject HttpClient Http
+
+<!-- ======= Header ======= -->
+<Navbar />
+<!-- End Header -->
+<Hero Heading="How KMN Works" />
+
+<!-- ======= How it works Section ======= -->
+@code {
+
+    private Dictionary<string, HelpItem> helpData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var jsonContent = await Http.GetStringAsync("/howitworks.json");
+            Console.WriteLine(jsonContent); // Debugging output
+            helpData = JsonSerializer.Deserialize<Dictionary<string, HelpItem>>(jsonContent);
+
+            await base.OnInitializedAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine(ex.InnerException);
+        }
+    }
+
+    public class HelpItem
+    {
+        public Dictionary<string, string> Images { get; set; }
+        public Dictionary<string, string> Texts { get; set; }
+        public string Id { get; set; }
+    }
+
+    public class HelpData
+    {
+        public Dictionary<string, HelpItem> Steps { get; set; }
+    }
+}
+
+<section class="hiw">
+    @if (helpData != null)
+    {
+        @foreach (var steps in helpData)
+        {
+            <h2 class="hiw--header" id="@steps.Value.Id">@steps.Key</h2>
+            <div class="hiw--section" >
+                <figure class="hiw--figure">
+                    <img class="hiw--img" src="@steps.Value.Images["1"]" alt="How it Works Image" />
+                </figure>
+                <ul class="hiw--text-box">
+                    @((MarkupString)steps.Value.Texts["1"])
+                </ul>
+                @if (steps.Value.Texts.ContainsKey("2"))
+                {
+                    <ul class="hiw--text-box">
+                        @((MarkupString)steps.Value.Texts["2"])
+                    </ul>
+                    <figure class="hiw--figure">
+                        <img class="hiw--img" src="@steps.Value.Images["2"]" alt="How it Works Image" />
+                    </figure>
+                }
+            </div>
+        }
+    }
+</section>

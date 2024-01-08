@@ -1,0 +1,97 @@
+@page "/faq"
+@using System.Text.Json;
+@inject HttpClient Http
+
+<!-- ======= Header ======= -->
+<Navbar />
+<!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex flex-col align-items-center">
+    <div class="container d-flex mt-5 flex-column align-items-center">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+</section><!-- End Hero Section -->
+<main id="faq">
+
+    <!-- ======= FAQ Section ======= -->
+    <section class="container">
+        @if (faqData != null)
+        {
+            <ul>
+                @foreach (var cat in faqData)
+                {
+                    <div class="faq--section">
+                        <h2 class="faq--section__header">@cat.Key</h2>
+                        @foreach (var q in cat.Value.Questions)
+                        {
+                            <div class="faq--section__question" @onclick="()=>ToggleQuestion(cat.Key, q.Key)">
+                                <h3>
+                                    @q.Value.Question
+                                </h3>                    @{
+                                    if (q.Value.IsOpen)
+                                    {
+                                        <span>&uarr;</span>
+                                    }
+                                    else
+                                    {
+                                        <span>&darr;</span>
+                                    }
+                                }
+                            </div>
+
+                            string faqAnswerShow = q.Value.IsOpen ? "faq--answer-show" : "faq--answer-hide";
+                            <p class="@faqAnswerShow">
+                                @faqData[cat.Key].Answers[q.Key]
+                            </p>
+                        }
+                    </div>
+                }
+            </ul>
+        }
+        <h2>@errorMsg</h2>
+    </section>
+</main>
+
+@code {
+    private string errorMsg = "";
+    private Dictionary<string, FAQCategory> faqData;
+
+    private void ToggleQuestion(string categoryName, string questionId)
+    {
+        if (faqData.TryGetValue(categoryName, out var category) &&
+        category.Questions.TryGetValue(questionId, out var question))
+        {
+            question.IsOpen = !question.IsOpen;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var jsonContent = await Http.GetStringAsync("/faqs.json");
+            Console.WriteLine(jsonContent); // Debugging output
+            faqData = JsonSerializer.Deserialize<Dictionary<string, FAQCategory>>(jsonContent);
+        }
+        catch (Exception ex)
+        {
+            errorMsg = ex.InnerException.ToString();
+            Console.WriteLine(ex.Message);
+            Console.WriteLine(ex.InnerException);
+        }
+    }
+}
+    @code {
+    public class FAQCategory
+    {
+        public Dictionary<string, FaqQuestion> Questions { get; set; }
+        public Dictionary<string, string> Answers { get; set; }
+        private bool IsOpen { get; set; }
+    }
+
+    public class FaqQuestion
+    {
+        public string Question { get; set; }
+        public bool IsOpen { get; set; }
+    }
+}

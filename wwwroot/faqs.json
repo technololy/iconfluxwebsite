@@ -1,0 +1,45 @@
+{
+  "Referrals": {
+    "Questions": {
+      "1": {
+        "Question": "How Do I Make Referrals?",
+        "IsOpen": false
+      },
+      "2": {
+        "Question": "How is Profit Shared when I make Referrals?",
+        "IsOpen": false
+      }
+    },
+    "Answers": {
+      "1": "It is quite straighforward. Simply tell your family, friends, and audience to use your KMN username as their referrer.",
+      "2": "We charge 10% of the payment each passenger makes for a trip. You will be getting half of the 10% we charge. This means if a driver pays N1000, we charge N100, and we give you N50. You earn the same amount as we."
+    }
+  },
+  "Sign Up": {
+    "Questions": {
+      "1": {
+        "Question": "How do I Sign Up?",
+        "IsOpen": false
+      },
+      "2": {
+        "Question": "How do I Verify my account?",
+        "IsOpen": false
+      }
+    },
+    "Answers": {
+      "1": "First, enter your email address in the sign up page, you will receive an email containing a One Time Password (OTP). Enter the one time password accordingly, then proceed to provide the additional details by updating your profile.",
+      "2": "After you signed up, an OTP would have been sent to the email address you provided. Kindly use the six digits to verify your account."
+    }
+  },
+  "Login": {
+    "Questions": {
+      "1": {
+        "Question": "How do I Login In?",
+        "IsOpen": false
+      }
+    },
+    "Answers": {
+      "1": "Enter your user name and password."
+    }
+  }
+}

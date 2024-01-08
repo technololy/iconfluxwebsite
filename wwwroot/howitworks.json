@@ -1,0 +1,49 @@
+{
+  "What KMN Does?": {
+    "Id": "wkd",
+    "Images": {
+      "1": "/assets/img/hiw/kmn.png"
+    },
+    "Texts": {
+      "1": "<p>KMN is a car-pooling and fleet management hailing service where both drivers and passengers have the ability to invite family and friends to go on rides together. Trips can be secured by creating a driving plan (if you are a driver) or a passenger plan (if you are a passenger). Drivers can be found by passengers and vice versa. Take a look at the section on how to <a href='how-it-works#cdp' target='_top'>create driver</a> or <a href='how-it-works#cpp' target='_top'>passenger</a> plans and how to <a href='how-it-works#fd' target='_top'>find drivers</a> or <a href='how-it-works#fp' target='_top'>passengers</a> below. <br/><br/>With KMN, both parties (drivers and passengers) have the capability to request trips. In an instance where the passenger does not find drivers going his direction, he can easily create plans so that drivers within his vicinity will request to take the passenger on a trip.</p>"
+    }
+  },
+  "Create a driving Plan": {
+    "Id": "cdp",
+    "Images": {
+      "1": "/assets/img/hiw/dp-1.jpg",
+      "2": "/assets/img/hiw/dp-2.jpg"
+    },
+    "Texts": {
+      "1": "<li>On the homepage, kindly press <span>drivers</span></li><li>You get two options; <span>Create new driving plan</span> and <span>view existing plans</span>. Kindly tap the first.</li><li>Kindly input the relevant details; <span>pickup point, destination, pickup date and time</span> and press the <span>Proceed</span> button. <em>Kindly note that you can choose locations from the map or saved addresses.</em></li>",
+      "2": "<li>Kindly press <span>Select Vehicle</span>. If you don't have any vehicle registered, kindly go on to register one. See how to do that <a href=''#createvehicle'>here</a></li><li>Choose <span>Transport Fare, Seats</span> you'd like to make available to passengers, and <span>Some notes to passengers</span>that inform them what the trip is about.</li><li>Switch on <span>Will there be a return trip?</span> switch if you are making a round trip then press <span>Create Driving Plan</span>.</li>"
+    }
+  },
+  "Create a passenger Plan": {
+    "Id": "cpp",
+    "Images": {
+      "1": "/assets/img/hiw/pp.jpg"
+    },
+    "Texts": {
+      "1": "<li>On the homepage, kindly press <span>passengers</span>.</li><li>You get two options; <span>Create new passenger plan</span> and <span>view existing passenger plans</span>. Kindly tap the first.</li><li>Kindly input the relevant details; <span>pickup point, destination, pickup date and time</span> and press <span>Create Passenger Plan</span> button to create your plan. <em>Kindly note that you can choose locations from the map or saved addresses.</em></li>"
+    }
+  },
+  "Find Drivers": {
+    "Id": "fd",
+    "Images": {
+      "1": "/assets/img/hiw/fd.jpg"
+    },
+    "Texts": {
+      "1": "<li>On the homepage, kindly press <span>Search</span> to navigate to the <span>discover</span> page. Select <span>Search for drivers</span>.</li><li>You get two options; <span>show me all drivers</span> - which shows you all the driving plans available for you to request from - and <span>let me filter drivers</span>. Select the second (Let me filter drivers).</li><li>Kindly input the relevant details; <span>pickup point, destination, pickup date and time</span> and press <span>Search for drivers</span> button. <em>Kindly note that you can choose locations from the map or saved addresses.</em></li><li>A list of plans matching your search will appear for you to request rides from. If there isn't any that matches your preference,you can create a passenger plan. See how to do that <a href='#passengerplan'>here</a>.</li>"
+    }
+  },
+  "Find Passengers": {
+    "Id": "fp",
+    "Images": {
+      "1": "/assets/img/hiw/fp.png"
+    },
+    "Texts": {
+      "1": "<li>On the homepage, kindly press <span>Search</span> to navigate to the <span>discover</span> page. Select <span>Search for Passengers</span>.</li><li>Kindly input the relevant details; <span>pickup point, destination, pickup date and time</span>. <em>Kindly note that you can choose locations from the map or saved addresses.</em></li><li>As a driver searching for passengers, you also have to <span>Select Vehicle (or create one), Seats, and Transport Fare</span></li><li>Press <span>get passengers</span>.</li>"
+    }
+  }
+}
